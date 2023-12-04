@@ -52,7 +52,15 @@ class _GroceryListState extends State<GroceryList> {
       ),
     );
 
-    _loadItems();
+    if (newItem == null) {
+      return;
+    }
+
+    setState(() {
+      _groceryItems.add(newItem);
+    });
+
+    //_loadItems();
   }
 
   void _removeItem(GroceryItem item) {
